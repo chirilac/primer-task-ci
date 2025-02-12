@@ -3,10 +3,20 @@ name = "primer-task-ci"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
-requires-python = ">=3.10"
+requires-python = ">=3.13"
 dependencies = [
     "fastapi[standard]>=0.115.8",
     "pre-commit>=4.1.0",
     "ruff>=0.9.6",
     "uvicorn[standard]>=0.34.0",
 ]
+
+[tool.ruff]
+line-length = 100
+target-version = "py313"
+
+[tool.pyright]
+exclude = [".venv"]
+pythonVersion = "3.13"
+venvPath = "."
+venv = ".venv"
