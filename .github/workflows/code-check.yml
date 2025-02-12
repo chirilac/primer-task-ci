@@ -1,5 +1,9 @@
 name: Python Code Check
-on: [push]
+on:
+  pull_request:
+  push: 
+    branches: 
+      - master
 jobs:
   lock_file:
     runs-on: ubuntu-latest
