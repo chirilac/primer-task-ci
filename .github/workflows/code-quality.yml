@@ -1,7 +1,6 @@
 name: Python Code Quality
 on:
   pull_request:
-  push: 
     branches: 
       - main
 jobs:
