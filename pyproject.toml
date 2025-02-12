@@ -20,3 +20,8 @@ exclude = [".venv"]
 pythonVersion = "3.13"
 venvPath = "."
 venv = ".venv"
+
+[dependency-groups]
+dev = [
+    "pyright>=1.1.394",
+]
