@@ -6,11 +6,11 @@ on:
       - 'v*'  # Trigger on version tags (v1.0.0, v2.1.0, etc.)
 
 env:
-  GCP_REGION: northamerica-northeast1
-  GCP_PROJECT_ID: primer-dev-123456
-  GCP_WORKLOAD_IDENTITY_PROVIDER: projects/123456789/locations/global/workloadIdentityPools/github-pool/providers/github-provider
-  REGISTRY: northamerica-northeast1-docker.pkg.dev/primer-dev-123456/primer-ar
-  IMAGE_NAME: ${{ github.event.repository.name }}-${{ github.ref_name }}
+  GCP_REGION: europe-west2
+  GCP_PROJECT_ID: primer-450808
+  GCP_WORKLOAD_IDENTITY_PROVIDER: projects/primer-450808/locations/global/workloadIdentityPools/github-pool/providers/github-provider
+  REGISTRY: europe-west2-docker.pkg.dev/primer-450808/primer-ar
+  IMAGE_NAME: ${{ github.event.repository.name }}
 
 jobs:
   build-and-push:
