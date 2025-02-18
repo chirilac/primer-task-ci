@@ -8,7 +8,8 @@ on:
 env:
   GCP_REGION: europe-west2
   GCP_PROJECT_ID: primer-450808
-  GCP_WORKLOAD_IDENTITY_PROVIDER: projects/257300339815/locations/global/workloadIdentityPools/primer-github-pool/providers/primer-github-provider
+  WORKLOAD_IDENTITY_PROVIDER: projects/primer-450808/locations/global/workloadIdentityPools/primer-github-pool/providers/primer-github-provider
+  SERVICE_ACCOUNT: github-actions@primer-450808.iam.gserviceaccount.com
   REGISTRY: europe-west2-docker.pkg.dev/primer-450808/simple-webserver
   IMAGE_NAME: ${{ github.event.repository.name }}-${{ github.ref_name }}
 
@@ -27,8 +28,8 @@ jobs:
         id: auth
         uses: google-github-actions/auth@v2
         with:
-          workload_identity_provider: ${{ env.GCP_WORKLOAD_IDENTITY_PROVIDER }}
-          service_account: primer-gha@${{ env.GCP_PROJECT_ID }}.iam.gserviceaccount.com
+          workload_identity_provider: ${{ env.WORKLOAD_IDENTITY_PROVIDER }}
+          service_account: ${{ env.SERVICE_ACCOUNT }}
 
       - name: Set up Cloud SDK
         uses: google-github-actions/setup-gcloud@v2
